@@ -1,0 +1,44 @@
+@import '../node_modules/alertifyjs/build/css/alertify.min.css';
+@import '../node_modules/alertifyjs/build/css/themes/bootstrap.min.css';
+
+/* All Colors In Website*/
+
+:root {
+    --nav--primary--background-color: #ff4301;
+    --text-color: whitesmoke;
+    --nav--secondary--background-color: #111d5e;
+    --btn-outline-light-hover--text: #ff4301;
+    --btn-outline-light-hover--background-color: #f8f9fa;
+    --btn-outline-light-hover--border-color: #f8f9fa;
+    --btn-submit--text-color: whitesmoke;
+    --btn-submit--background: #ff4301;
+    --btn-submit--border--color: #ff4301;
+    --text-color--createAccount: #ff4301;
+    --allReturants--color--title: #111d5e;
+    --RestName--color: #111d5e;
+    --cateName--color: #ff4301;
+    --div-RestDetails-Title-color: #ff4301;
+}
+html{
+    position: relative;
+    min-height: 100%;
+}
+body{
+    padding-top:83px;
+    /* padding-bottom:83px; */
+    min-height: 100vh;
+    margin-bottom: 60px;
+    /* display: flex; */
+}
+#footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #111d5e;
+  color: #ff4301;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+}
+#footer :hover{
+    visibility: visible;
+}

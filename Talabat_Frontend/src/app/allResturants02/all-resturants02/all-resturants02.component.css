@@ -1,0 +1,138 @@
+.allResturant {
+    margin-top: 25px;
+    border: 3px solid whitesmoke;
+    box-shadow: 10px 10px 10px whitesmoke;
+    /* height: 880px; */
+    border-radius: 10px;
+}
+
+.title {
+    border-bottom: whitesmoke;
+}
+
+
+/*divImg1 {
+    height: 220px;
+    margin-left: 55px;
+    margin-right: 20px;
+}*/
+
+
+/* divImg2 {
+    
+    border: 2px solid whitesmoke;
+    height: 220px;
+    margin-left: 20px;
+    margin-right: 20px;
+} */
+
+
+/* divImg3 {
+    
+    border: 2px solid whitesmoke;
+    height: 220px;
+    margin-left: 20px;
+    
+} */
+
+/* .img {
+    margin-top: 8px;
+    margin-left: 6px;
+    margin-right: 6px;
+    width: 300px;
+    height: 150px;
+} */
+
+.RestName {
+    color: var(--RestName--color);
+    /*  font-weight: bold;
+    position: absolute;
+    top: 59%;
+    margin-left: 75px;*/
+}
+
+.cateName {
+    color: var( --cateName--color);
+    /*font-weight: bold;*/
+    /* position: absolute; */
+    /* top: 61%; 
+    margin-left: 115px;*/
+}
+
+
+/* divImg1:hover {
+    box-shadow: 10px 10px 10px grey;
+   
+    transform: scale(1.2);
+    transition: 0.6s;
+} */
+
+
+/* 
+divImg2:hover {
+    box-shadow: 10px 10px 10px grey;
+  
+    transform: scale(1.2);
+    transition: 0.6s;
+} */
+
+
+/* divImg3:hover {
+    box-shadow: 10px 10px 10px grey;
+    /* padding: 20px; 
+    transform: scale(1.2);
+    transition: 0.6s;
+} */
+
+RestDetails {
+    /* height: 70px; */
+    text-align: center;
+    /* margin-top: 2px; */
+    /* border-bottom: 2px solid whitesmoke; */
+}
+
+
+/* التعديل الجديد  */
+
+.h1 {
+    font-size: 35px;
+    color: var(--allReturants--color--title);
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+
+/* .restcat {
+    color: rgb(117, 111, 111);
+    font-size: small;
+} */
+
+
+/*
+res
+{
+    transition: 0.6s;
+    margin-top: 10px;
+    transform: scale(.7);
+   
+}
+res:hover
+{
+    box-shadow: 0px 0px 10px grey;
+    transform: scale(.9);
+    padding-left: 0px;
+    padding-right: 0px;
+    
+}
+*/
+
+.card {
+    margin-bottom: 30px;
+}
+
+.card:hover {
+    box-shadow: 10px 10px 10px grey;
+    /* padding: 20px; */
+    transform: scale(1.1);
+    transition: 0.4s;
+}

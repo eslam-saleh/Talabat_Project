@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="album  allResturant">
+        <div class="container">
+            <div class="title">
+                <h2 class="h1">Restaurants in Giza</h2>
+            </div>
+            <hr>
+            <div class="col d-flex justify-content-center">
+                <div class="row" style="text-align: center;">
+                    <ng-container *ngFor="let item of storeByLocation;let i=index">
+                        <div class="col">
+                            <div class="card" style="width: 17rem;" [routerLink]="['/AllResturants/Rest1/Details']">
+                                <img [src]="item.store.image" class="card-img-top" alt="Image Loading...">
+                                <hr>
+                                <div class="card-body">
+                                    <h5 class="card-title RestName">{{item.store.name}}</h5>
+                                    <!--<p class="card-text cateName">Resturant</p>-->
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div *ngIf="(i+1) % 2=== 0" class="w-100"></div>-->
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

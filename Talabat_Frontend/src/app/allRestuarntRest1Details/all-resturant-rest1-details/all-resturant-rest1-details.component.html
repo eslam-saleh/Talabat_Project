@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="show ">
+    <div class="details">
+      <div class="imgcontainer">
+        <img [src]="rest1Image" class="rest1Image">
+      </div>
+      <br>
+      <div class="">
+        <div class="col rest1name">
+          <h4>Hadaak El-shawarmaa</h4>
+        </div>
+      </div>
+
+      <br>
+      <div class=" restbutton">
+        <button [routerLink]="['/AllResturants/Rest1/Details/Menu']" class=" btn  btn-success">SHOW MENU</button>
+      </div>
+    </div>
+  </div>
+  <div class="div-nav"></div>
+  <div class="review">
+    <div class="title">
+      <h5>Hadaak El-shawarmaa delivers to you</h5>
+    </div>
+    <div class="paragraph">
+      <p>3a Tasa is a restaurant located in Egypt, serving a selection of Sandwiches that delivers across Kobry El
+        Qobba, Haram - El Remaya and Mokattam - Masaken Al Zelzal.
+        <br>
+        <br> Their best selling dishes are Alexandrian Liver Sandwich, Minced Oriental Sausage Sandwich Offer, Sausage
+        Sandwich Offer and Lokma Chicken Strips Sandwich, although they have a variety of dishes and meals to choose
+        from, like Sandwiches,
+        50% Off Offers, 50% Off Offers and Sandwiches.
+        <br>
+        <br> They have been reviewed 912 times by talabat users, with a rating of 3.5.</p>
+    </div>
+    <h5 style="margin-left: 10px;">Best Seller Dishes</h5>
+    <br>
+    <div class="row flex-wrap">
+      <div class="dishImg1 col-md-4 col-12">
+        <img [src]="dishImg">
+        <p>Alexandrian Liver Sandwich</p>
+      </div>
+      <div class="dishImg2 col-md-4 col-12">
+        <img [src]="dishImg">
+        <p>Alexandrian Liver Sandwich</p>
+      </div>
+      <div class="dishImg3 col-md-4 col-12">
+        <img [src]="dishImg">
+        <p>Alexandrian Liver Sandwich</p>
+      </div>
+    </div>
+    <hr>
+    <div style="margin-left: 10px;">
+      <h5>Hadaak El-shawarmaa Reviews</h5>
+    </div>
+    <div class="col-md-11 col-11 comment" *ngFor="let item of comments">
+      <h6>Ali**</h6>
+      <span>{{item.note}}</span>
+    </div>
+
+
+    <form #form="ngForm" (submit)="onSubmit(form)">
+      <input type="text" placeholder=".... Type  Your  Feedback .... " class="col-md-10 col-9 input"
+        [(ngModel)]="comment.note" name="note" #note=ngModel>
+      <button class="btn btn-success col-md-1 col-1 form-control" [disabled]="!form.valid">Add</button>
+      <div class="col-md-11 col-11 comment" [hidden]="hide">
+        <h6>Ahmed**</h6>
+        <span>{{comment.note}}</span>
+      </div>
+    </form>
+  </div>

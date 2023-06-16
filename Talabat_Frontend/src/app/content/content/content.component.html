@@ -1,0 +1,67 @@
+<app-carousel></app-carousel>
+<div class="container">
+  <h1 class="h1">Order food online in Egypt</h1>
+  <div style="text-align: center;">
+    <label for="">
+      <h4><i class="fas fa-map-marker-alt" style="color: #ff4301;"></i> Choose Location</h4>
+    </label>
+    <div class="row">
+      <div class="offset-lg-3 col-6">
+        <div class="form-groub">
+          <select #selState (change)="onChangeState(selState.value)" class="form-control">
+            <option value="">Select Your State</option>
+            <option *ngFor="let item of states$ | async" [value]="item">{{item}}</option>
+          </select>
+        </div>
+        <div class="form-groub mt-5">
+          <select #selArea [disabled]="!canSelectArea" (change)="onChangeArea(selArea.value)" class="form-control">
+            <option value="">Select Your Area</option>
+            <option *ngFor="let item of areas$ | async" [value]="item">{{item}}</option>
+
+          </select>
+        </div>
+        <button type="button" id="btn" (click)="onClick()"
+         class="btn btn-lg mt-5" *ngIf="state&&area">Show Restaurants</button>
+      </div>
+
+      <!-- <ul class="select">
+                <li class="option"> <a [routerLink]="['/ResturantsAtLocation01']" style="color:whitesmoke">Cairo</a></li>
+                <li class="option"> <a [routerLink]="['/ResturantsAtLocation02']" style="color:whitesmoke">Giza</a></li>
+            </ul> -->
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <div style="text-align: center;">
+    <h3 style="color: #ff4301;">Delivery Anywhere</h3>
+    <h6 style="color: #111d5e;">Order food delivery online from hundreds of restaurants and shops nearby</h6>
+    <img [src]="deliveryImage" class="responsive">
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <div style="text-align: center;">
+    <h3 style="color: #111d5e;">Explore All Resturants</h3>
+    <img [src]="toAlResturnat" [routerLink]="['/AllResturants']" style="cursor: pointer;" class="responsive">
+    <br>
+    <br>
+    <br>
+    <br>
+    <h3 style="color: #111d5e;">Join Us</h3>
+    <img [src]="toBecomePartner" [routerLink]="['/RegisterPartener']" style="cursor: pointer;" class="responsive">
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+</div>
+<!--<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+    <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>-->

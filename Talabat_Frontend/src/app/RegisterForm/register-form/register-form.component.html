@@ -1,0 +1,85 @@
+<div class="parent justify-content-center"
+  style="background-image: url(assets/images/1.jpg);background-repeat: no-repeat;background-size:cover;margin-top: 0;margin-bottom: 0;">
+  <div class="container d-flex justify-content-center">
+    <div class="row justify-content-center">
+      <div class="col-lg-12 col-md-12 col-sm-12  mb-3 mt-3">
+        <div class="login">
+          <div class="card text-center" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Sign Up</h5>
+              <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+
+                <div class="form-group">
+                  <label class=" ml-1 d-flex justify-content-start" for="firstName">
+                    Fisrt name
+                  </label>
+                  <input required ngModel name="firstName" #firstName=ngModel placeholder="Enter Your First Name"
+                    (change)="log(firstName)" minlength="3" maxlength="10" id="firstName" type="text"
+                    class="form-control">
+                  <div class="alert alert-danger" *ngIf="firstName.touched&&!firstName.valid">Please enter your
+                    firstname
+                    <div *ngIf="firstName.errors.minlength">FirstName should be minimum
+                      {{firstName.errors.minlength.requiredLength}} characters</div>
+                    <!--<div class="alert alert-danger" *ngIf="firstName.value!=pattern">FirstName should not contain numbers</div>-->
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class=" ml-1 d-flex justify-content-start" for="lastName">Last name</label>
+                  <input type="text" id="lastName" placeholder="Enter Your Last Name" ngModel name="lastName"
+                    #lastName=ngModel reqiured minlength="3" maxlength="10" class="form-control">
+                  <diV class="alert alert-danger" *ngIf="lastName.touched&&!lastName.valid">Please enter your lastname
+                    <div *ngIf="lastName.errors.minlength">LastName should not be minimum
+                      {{lastName.errors.minlength.reqiuredLength}}</div>
+
+                  </diV>
+                </div>
+
+                <div class="form-group">
+                  <label class=" ml-1 d-flex justify-content-start" for="email">Email</label>
+                  <input class="form-control" type="email" id="email" [class.is-valid]="email.valid"
+                    [class.is-invalid]="email.invalid && email.touched" placeholder="Enter Your Email"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" ngModel name="email" #email=ngModel required>
+                  <div class="alert alert-danger" *ngIf="email.touched&&!email.valid">Please enter your emial</div>
+                </div>
+                <div class="form-group">
+                    <label class=" ml-1 d-flex justify-content-start" for="phoneNumber">Phone Number</label>
+                    <input class="form-control" type="text" id="phoneNumber" [class.is-valid]="phoneNumber.valid"
+                      [class.is-invalid]="phoneNumber.invalid && phoneNumber.touched" placeholder="Enter Your Phone Number "
+                       ngModel name="phoneNumber" #phoneNumber=ngModel required>
+                    <div class="alert alert-danger" *ngIf="phoneNumber.touched&&!phoneNumber.valid">Please enter your phone number</div>
+                  </div>
+
+                <div class="form-group">
+                  <label class=" ml-1 d-flex justify-content-start" for="password">Password</label>
+                  <input class="form-control" type="password" placeholder="Enter Your Password" id="password" ngModel
+                    name="password" #password=ngModel required>
+                  <div class="alert alert-danger" *ngIf="password.touched&&!password.valid">Please enter your password
+                  </div>
+
+                </div>
+                <div class="form-group">
+                  <label class=" ml-1 d-flex justify-content-start" for="conpassword">Confirm Password</label>
+                  <input class="form-control" type="password" placeholder="Enter Your Password" id="conpassword" ngModel
+                    name="confirmpassword" #conpassword=ngModel required>
+                  <div class="alert alert-danger" *ngIf="conpassword.touched&&conpassword.value!=password.value">Confirmation password doesn't march your password
+                  </div>
+
+                </div>
+
+                <div class="form-group">
+                  <button class="btn btn-primary form-control btn-submit" [disabled]="f.invalid">Login</button>
+                </div>
+
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

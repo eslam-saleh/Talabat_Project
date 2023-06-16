@@ -1,0 +1,32 @@
+<div class="container">
+  <h1 class="h1">My Cart</h1>
+<div class="table-responsive-md">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Discount</th>
+        <th>Price after Discount</th>
+      </tr>
+    </thead>
+    <tbody>
+     <tr *ngFor="let item of cartLst ;let i=index">
+       <td>{{i+1}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.quantity}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.discount}}</td>
+        <td>{{getActPrice(item)}}</td>
+     </tr>
+    </tbody>
+  </table>
+</div>
+<div class="row">
+  <button class="btn btn-danger ml-3" (click)="onClick()" *ngIf="count">Clear My Cart</button>
+  <button *ngIf="count" class="btn btn-success ml-auto mr-3" [routerLink]="['/MyCart/CheckOut']">Check Out</button>
+</div>
+
+</div>

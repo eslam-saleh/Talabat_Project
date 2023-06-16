@@ -1,0 +1,41 @@
+<div class="container">
+  <br>
+  <div class="row ">
+    <div class="col-3">
+      <div class="sticky-top">
+        <div class="list-group">
+          <a *ngFor="let item of sectionLst" routerLink="/restaurant/admin" [queryParams]="{section:item.id}"
+            [class.active]="id==item.id" class="list-group-item list-item-group-action">
+            {{item.name}}
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-9">
+        <button class="btn btn-primary" routerLink="/restaurant/admin/new">Add Menu Item</button>
+      <table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Discount</th>
+            <th>Catogery Name</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of menuLst;let i=index">
+            <td>{{i+1}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.price}}</td>
+            <td>{{item.discount}} %</td>
+            <td>{{item.catName}}</td>
+            <td><a [routerLink]="['/restaurant/admin',item.id]">Edit</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>

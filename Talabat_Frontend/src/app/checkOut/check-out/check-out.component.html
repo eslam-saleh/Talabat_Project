@@ -1,0 +1,140 @@
+<div class="container">
+
+
+
+  <div class="card order-summary">
+    <div class="card-header">
+      <div class="row">
+        <div class="col-md-6">
+          Order Summary
+        </div>
+        <div class="col-md-6 text-right">
+          <a [routerLink]="['/AllResturants/Rest1/Details/Menu',restId]" [queryParams]="{state:state ,area:area}">Modify Order</a>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <h5 class="card-title col-md-6">Arabiata Restaurant </h5>
+      </div>
+      <table class="table tb-border">
+        <thead class="thead-light">
+          <tr>
+            <th></th>
+            <th scope="col">Item(s)</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+            <th scope="col">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of cartLst;let i=index">
+            <td>{{i+1}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.quantity}}</td>
+            <td>{{item.actPrice | currency : 'USD': 'EGP'}}</td>
+            <td>{{item.totalPrice | currency : 'USD': 'EGP'}}</td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+  <div class="address card">
+    <div class="card-header">
+      Delivery Address
+    </div>
+    <div class="card-body">
+
+      <form #f="ngForm">
+        <h5 class="card-title">Contact Details </h5>
+        <!--form Row -->
+        <div class="form-row">
+          <!--phone -->
+          <div class="form-group col-md-12">
+            <label for="phone">Phone Number</label>
+            <input type="text" class="form-control" id="phone" placeholder="Phone Number" ngModel name="phoneNumber" #phone=ngModel
+              required  minlength="11" maxlength="11">
+            <diV class="alert alert-danger" *ngIf="phone.touched&&phone.invalid">
+              Your phone Number must be  11 digits 
+            </diV>
+          </div>
+        </div>
+       
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputState">Area</label>
+            <input class="form-control" type="text" [value]="area" disabled>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="state">State</label>
+            <input class="form-control" type="text" [value]="state" disabled>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="st">Street</label>
+            <input #street="ngModel" ngModel name="street" class="form-control" id="st" type="text" required>
+            <diV class="alert alert-danger" *ngIf="street.touched&&!street.valid">Please enter your street</diV>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="bn">Building Number</label>
+            <input #bn="ngModel" ngModel name="buildingNumber" class="form-control" id="bn" type="text" required>
+            <diV class="alert alert-danger" *ngIf="bn.touched&&!bn.valid">Please enter your Building Number</diV>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="card payment ">
+    <div class="card-header">
+      Payment Summary
+    </div>
+    <div class="card-body">
+      <h6 class="card-title">select Your Payment Method</h6>
+      <div class="form-row">
+        <div class="col-md-6">
+          <div class="f p-2 m-2">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"
+              disabled>
+            <label class="form-check-label" for="exampleRadios1">
+              Credit Card
+            </label>
+          </div>
+          <div >
+            <div class=" f p-2 m-2">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" checked>
+              <label class="form-check-label" for="exampleRadios2">
+                Cash
+              </label>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="col-md-6">
+          <table class="table">
+            <tr>
+              <th>Subtotal</th>
+              <td>{{total | currency : 'USD': 'EGP'}}</td>
+            </tr>
+            <tr>
+              <th>Service Charge</th>
+              <td>{{serviceCharge | currency : 'USD': 'EGP'}}</td>
+            </tr>
+            <tr>
+              <th>Total Amount</th>
+              <td>{{serviceCharge + total | currency : 'USD': 'EGP'}}</td>
+            </tr>
+          </table>
+
+          <div class="btn btn-primary col-6 " *ngIf="f.dirty&&f.valid" (click)="makeOrder(f)"> Place Order</div>
+        </div>
+      </div>
+    </div>
+  </div>

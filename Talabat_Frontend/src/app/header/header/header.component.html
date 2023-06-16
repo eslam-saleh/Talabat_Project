@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top"
+  style="background-color:var(--nav--primary--background-color) ;">
+  <div class="container">
+
+    <a class="navbar-brand" [routerLink]="['/Home']" routerLinkActive="router-link-active">
+
+      <h1>Talabat</h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+         <!-- <li class="nav-item active">
+          <a class="nav-link DDL-style" [routerLink]="['/Offers']" style="color:var(--text-color);">Offers<span
+              class="sr-only">
+             </span></a>
+        </li> -->
+        <!-- <li class="nav-item active">
+          <a class="nav-link DDL-style" [routerLink]="['/RegisterPartener']" routerLinkActive="router-link-active"
+            style="color:var(--text-color);">Become a partner</a>
+        </li>  -->
+        <li class="nav-item active">
+          <a class="nav-link DDL-style" [routerLink]="['/AllResturants']" style="color: var(--text-color);">All
+            Resturants<span class="sr-only">
+              <!--(current)--></span></a>
+        </li>
+       
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown" *ngIf="isLoggedIn()">
+          <a class="nav-link dropdown-toggle DDL-style" id="navbarDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:var(--text-color);">
+            Welcome {{getUserName()}}
+            <!-- <span class="badge rounded-pill bg-success">0</span> -->
+          </a>
+
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" [routerLink]="['/admin']" *ngIf="isLoggedIn()&&isAdmin()" style="color:var(  --cateName--color);">Admin</a>
+            <a class="dropdown-item" [routerLink]="['/restaurant/admin']" *ngIf="isLoggedIn()" style="color:var(  --cateName--color);">Restaurant Admin</a>
+            <a class="dropdown-item" [routerLink]="['/MyCart']" routerLinkActive="router-link-active"
+              style="color:var(  --cateName--color);">My Cart</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item"  style="color:var( --cateName--color);" (click)=logOut()>Logout</a>
+          </div>
+        </li>
+      </ul>
+      <button class="nav-item btn btn-outline-light-hover my-2 my-sm-0 ml-auto" type="button" [routerLink]="['/Login']"
+        routerLinkActive="router-link-active" *ngIf="!isLoggedIn()">Login</button>
+
+    </div>
+    <a class="nav-item ml-2" [routerLink]="['/MyCart']">
+      <img style="width: 30px;height: 30px;" src="../../../assets/images/Cart-1-512.png">
+      <sup>
+        <span class="badge badge-warning badge-pill">
+          {{cartCounter}}
+        </span>
+      </sup>
+    </a>
+  </div>
+</nav>

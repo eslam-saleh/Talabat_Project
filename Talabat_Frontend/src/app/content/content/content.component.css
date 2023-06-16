@@ -1,0 +1,60 @@
+.h1 {
+    color: #111d5e;
+    text-align: center;
+}
+#btn{
+    background-color:var( --nav--primary--background-color);
+    color: var(--text-color);
+}
+.select {
+    color: whitesmoke;
+    border: 2px solid whitesmoke;
+    border-radius: 10px;
+    background-color: #ff4301;
+    /*text-align: center;*/
+    padding: 5px;
+    width: 100px;
+    /* margin-left: 15px; */
+    font-size: large;
+    font-weight: bold;
+    /* text-align: center; */
+}
+
+.select option {
+    color: #ff4301;
+    border: 2px solid whitesmoke;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    /*text-align: center;*/
+    padding: 5px;
+    width: 100px;
+    /* margin-left: 15px; */
+    font-size: large;
+    font-weight: bold;
+    /* text-align: center; */
+}
+
+
+/* .option:hover {
+    color: whitesmoke;
+    border: 2px solid whitesmoke;
+    border-radius: 10px;
+    background-color: #ff4301;
+    /*text-align: center;
+    padding: 5px;
+    width: 100px;
+   /* margin-left: 15px; 
+   font-size: large;
+   font-weight: bold;
+  /* text-align: center; 
+} */
+
+.responsive {
+    /* width: 100%;
+    height: auto; */
+    max-width: 100%;
+    height: auto;
+    /* width: 100%;
+    max-width: 400px;
+    height: auto; */
+}

@@ -1,0 +1,19 @@
+<p>
+    <button routerLink="/admin/restaurant/new" class="btn btn-primary">New Restaurant</button>
+</p>
+<table class="table">
+    <thead>
+        <th>Title</th>
+        <th>Admin</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr  *ngFor="let item of stores$ | async">
+            <td>{{item.name}}</td>
+            <td>{{item.email}}</td>
+            <td>
+                <a [routerLink]="[ '/admin/restaurant/', item.id ]">Edit</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

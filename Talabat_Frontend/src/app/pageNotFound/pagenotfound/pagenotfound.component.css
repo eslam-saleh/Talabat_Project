@@ -1,0 +1,10 @@
+.Mybtn-outline-warning:hover {
+    color: white;
+    background-color: var( --btn-outline-light-hover--text);
+    border-color: var( --btn-outline-light-hover--text);
+}
+
+.Mybtn-outline-warning {
+    color: var( --btn-outline-light-hover--text);
+    border-color: var( --btn-outline-light-hover--text);
+}

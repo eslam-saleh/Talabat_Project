@@ -1,0 +1,52 @@
+<div class="media border rounded mb-3">
+  <img class="align-self-center mr-3" src="../../assets/talabatImg/dishImg.jpg" alt="Generic">
+  <div class="media-body">
+    <div class="row no-gutters">
+      <div class="col-8">
+        <h5 class="mt-2">{{menuItem.name}}</h5>
+        <p> {{menuItem.describtion}}</p>
+      </div>
+      <div class="col p-2">
+        <p class="text-center">
+          {{ menuItem.price | currency:'USD':'EGP' }}
+        </p>
+        <a *ngIf="getQuantity(menuItem)===0;else updateQuantity" class="btn btn-primary btn-sm" (click)="addToCart(menuItem)">
+          Add to Cart
+        </a>
+        <ng-template #updateQuantity>
+          <div class="row no-gutters">
+            <div class="col-4">
+              <a class="btn btn-secondary btn-block btn-sm" (click)="removeFromCart(menuItem)">-</a>
+            </div>
+            <div class="col text-center">
+              {{getQuantity(menuItem)}}
+            </div>
+            <div class="col-4">
+              <button type="button" class="btn btn-secondary btn-block btn-sm" (click)="addToCart(menuItem)">+</button>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- <div class="card" style="width: 15rem;">
+  <img class="card-img-top" src="menuItem.img" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{menuItem.name}}</h5>
+    <p class="card-text">
+      {{menuItem.describtion}}
+    </p>
+    <p class="card-text">
+      
+    </p>
+  </div>
+  <div class="card-footer">
+    <a class="btn btn-primary btn-block" 
+    *ngIf="showAction"(click)="addToCart(menuItem)" >Add to Cart</a>
+  </div>
+</div> -->

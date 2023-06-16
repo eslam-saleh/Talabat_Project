@@ -1,0 +1,22 @@
+.h1 {
+    color: var( --cateName--color);
+    margin-top: 10px;
+}
+
+.btn-submit {
+    color: var( --btn-submit--text-color);
+    background-color: var(--btn-submit--background);
+    border-color: var(--btn-submit--border--color);
+    font-weight: 500;
+    margin-right: 850px;
+    margin-bottom: 105px;
+}
+
+.table-hover tbody tr:hover {
+    color: var(--text-color);
+    background-color: var(--btn-submit--background);
+}
+
+.Check {
+    margin-bottom: 105px;
+}

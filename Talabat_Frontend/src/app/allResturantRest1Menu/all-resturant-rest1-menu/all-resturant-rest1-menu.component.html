@@ -1,0 +1,120 @@
+<diV class="container">
+  <div class="allResturant col-md-12 col-12">
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a [routerLink]="['/Home']">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Location</li>
+        <li class="breadcrumb-item active" aria-current="page">Hadaa El-shawarma</li>
+      </ol>
+    </nav>
+    <div class="media">
+      <img [src]="rest1Image" class="img">
+      <div class="media-body  align-self-center">
+        <h4 class="h4">Hadaa El-Shawarmaa</h4>
+        <p class="p">in Giza,Egypt</p>
+      </div>
+    </div>
+    <div class="row">
+      <i class="fas fa-utensils i1"></i>
+      <i class="fas fa-comments i2"></i>
+      <i class="fas fa-info-circle i3"></i>
+    </div>
+
+    <mat-tab-group class="mat-tab-group" mat-align-tabs="center" animationDuration="2000ms">
+      <mat-tab label="Menu" class="mat-tab1">Menu
+        <div class="sticky-top">
+          <div class="row">
+            <div class="col-md-3 col-1">
+              <div class="list-group">
+                <a class="list-group-item list-group-item-action" [routerLink]="['/AllResturants/Rest1/Details/Menu']"
+                  [queryParams]="{'category':'allCategory'}" [class.active]="!category" style="text-align: center;">All
+                  Category</a>
+                <a class="list-group-item list-group-item-action" *ngFor="let item of menuCategory"
+                  [routerLink]="['/AllResturants/Rest1/Details/Menu']" [queryParams]="{category:item.id}"
+                  [class.active]="category===item.id" style="text-align: center;">{{item.name}}</a>
+              </div>
+            </div>
+            <div class="col-9">
+              <div class="row">
+                <!-- <ng-container *ngFor="let item of filteredMenuItem ;let i=index"> -->
+                <ng-container *ngFor="let item of filteredMenuItem ;let i=index">
+                  <div class="col">
+                    <div class="card" style="width: 17rem;">
+                      <img [src]="img" class="card-img-top" alt="Image Loading...">
+                      <div class="card-body">
+                        <h5 class="card-title">{{item.name}}</h5>
+                        <p class="card-text">{{item.price|currency:'EGP '}}</p>
+                      </div>
+                      <div class="card-footer">
+                        <a href="#" class="btn Mybtn-primary btn-block">Add To Your Cart</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div *ngIf="(i+1) % 2=== 0" class="w-100"></div>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Reviews">Reviews
+        <hr>
+        <div style="margin-left: 10px;">
+          <h5 class="h5">Hadaak El-shawarmaa</h5>
+        </div>
+        <div>
+          <img [src]="rest1Rate" class="col-md-8 col-11">
+        </div>
+        <div class="col-md-11 col-11 comment">
+          <h6>Ali**</h6>
+          <span class="span">الاكل رائع </span>
+        </div>
+        <br>
+        <div class="col-md-11 col-11 comment">
+          <h6 class="h6">Ahmed** </h6>
+          <span class="span">Goooood Food</span>
+        </div>
+        <br>
+        <div class="col-md-11 col-11 comment">
+          <h6 class="h6">Hamada**</h6>
+          <span class="span">التوصيل تمام لكن الاكل مش زى ماتوقعت رغم انه اغلى من مطاعم تانية كتير اكلها احلى</span>
+        </div>
+        <br>
+        <div class="col-md-11 col-11 comment">
+          <h6 class="h6">Hassan**</h6>
+          <span class="span">الأكل تحفه </span>
+        </div>
+      </mat-tab>
+      <mat-tab label="Info">Info
+        <hr>
+        <div style="margin-left: 10px;">
+          <h5 class="h5">Hadaak El-shawarmaa</h5>
+        </div>
+        <div class="table-responsive-md">
+          <table class="table" style="text-align: center;font-weight: 350;">
+            <tr>
+              <td>Minimum Order Amount</td>
+              <td>EGP 0.00</td>
+            </tr>
+            <tr>
+              <td>Working Hours (EveryDay)</td>
+              <td>8:00AM - 10:00PM</td>
+            </tr>
+            <tr>
+              <td>Location</td>
+              <td>Giza,Egypt</td>
+            </tr>
+            <tr>
+              <td>Service Charge</td>
+              <td>EGP 9.99</td>
+            </tr>
+            <tr>
+              <td>Rating</td>
+              <td><img [src]="rest1RateVGood"></td>
+            </tr>
+          </table>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</diV>

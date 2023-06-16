@@ -1,0 +1,13 @@
+.btn-submit {
+    /*color: #212529;*/
+    color: var( --btn-submit--text-color);
+    background-color: var(--btn-submit--background);
+    border-color: var(--btn-submit--border--color);
+}
+
+.card-title
+{
+    color: #ff4301;
+    font-size: 30px;
+    font-weight: bolder;
+}

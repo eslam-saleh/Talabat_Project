@@ -1,0 +1,25 @@
+<div class="container">
+  <br>
+    <div class="row ">
+        <div class="col-3">
+            <div class="sticky-top">
+                <div class="list-group">
+                  <a routerLink="/admin" [class.active]="!section"
+                    class="list-group-item list-item-group-action">
+                    Restaurants
+                  </a>
+                  <a *ngFor="let item of sectionLst" routerLink="/admin" [queryParams]="{section:item}"
+                    [class.active]="section===item" class="list-group-item list-item-group-action">
+                    {{item}}
+                  </a>
+                </div>
+              </div>     
+        </div>
+        <div class="col-9">
+            <app-manage-restaurant *ngIf="!section"></app-manage-restaurant>
+            <app-manage-user *ngIf="section==='Users'"></app-manage-user>
+            <app-manage-order *ngIf="section==='Orders'"></app-manage-order>
+        </div>
+    </div>
+   
+</div>

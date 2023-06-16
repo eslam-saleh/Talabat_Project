@@ -1,0 +1,14 @@
+<div class="sticky-top">
+  <div class="list-group">
+    <a [routerLink]="['/AllResturants/Rest1/Details/Menu', restIsAndLoc.id]" [class.active]="!catogeryName"
+    [queryParams]="{state:restIsAndLoc.state ,area:restIsAndLoc.area}" class="list-group-item list-item-group-action">
+      All Catogery
+    </a>
+    <a *ngFor="let item of catLst" [routerLink]="['/AllResturants/Rest1/Details/Menu',restIsAndLoc.id]" [queryParams]="{catogery:item ,state:restIsAndLoc.state ,area:restIsAndLoc.area}"
+      [class.active]="catogeryName===item" class="list-group-item list-item-group-action">
+
+      {{item}}
+    </a>
+  </div>
+
+</div>

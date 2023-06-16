@@ -1,0 +1,38 @@
+<div class="container">
+    <h2>Order Details</h2>
+    <table class="table my-5" >
+        <thead>
+            <th>Date</th>
+            <th>Price</th>
+            <th>User Name</th>
+            <th>Restaurant Name</th>
+            <th>Region</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{order.creationDate}}</td>
+                <td>{{order.price}}</td>
+                <td>{{userName}}</td>
+                <td>{{resName}}</td>
+                <td>{{getRegion()}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <h3>Order Items Details</h3>
+    <table class="table my-5" >
+        <thead>
+            <th>Item Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of orderItems$ | async">
+                <td>{{item.itemName}}</td>
+                <td>{{item.price}}</td>
+                <td>{{item.quantity}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-danger " (click)="delete()">Delete</button>
+
+</div>

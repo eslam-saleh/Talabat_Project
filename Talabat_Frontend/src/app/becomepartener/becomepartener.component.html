@@ -1,0 +1,80 @@
+<div  class="parent" style="background-image: url(assets/images/1.jpg);background-repeat: no-repeat;background-size:cover;margin-top: 0;margin-bottom: 0;">
+    <div class="container">
+        <div class="row">
+            <div class=" desc col-lg-7 col-md-12 col-sm-12 mt-8 ">
+                 <!-- 
+                       <div class="nn pt-8">
+                    <h1>Reach new customers, get more sales</h1>
+                    <p>Join Talabat, the Middle East's largest delivery platform</p>
+                </div>
+                 -->
+
+               
+        </div>
+        
+          <div class="col-lg-3 col-md-12 col-sm-12 d-flex justify-content-md-center justify-content-lg-start mb-3 mt-3">
+            <div class="login">
+                <div class="card text-center" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">Join Us Today!</h5>
+                      <form class="" #f="ngForm" (ngsubmit)="submit(f)">
+                        <div class="form-group">
+                            <label class="ml-0 d-flex justify-content-start" id="firstName">First Name</label>
+                            <input class="form-control" type="text" id="firstName" placeholder="Enter Your First Name" ngModel name="firstName" #firstName=ngModel required minlength="3" maxlength="10">
+                            <div class="alert alert-danger" *ngIf="firstName.touched&&!firstName.valid">Please enter your firstname
+                                <div *ngIf="firstName.errors.minlength">FirstName should be {{firstName.errors.minlength.requiredLength}}</div>
+                            </div>
+                        </div>
+            
+                        <div class="form-group">
+                            <label class="pl-1 d-flex justify-content-start" id="lastName">Last Name</label>
+                            <input class="form-control" type="text" id="lastName" placeholder="Enter Your Last Name" ngModel name="lastName" #lastName=ngModel required minlength="3" maxlength="10">
+                            <div class="alert alert-danger" *ngIf="lastName.touched&&!lastName.valid">Please enter your lastname
+                                <div *ngIf="lastName.errors.minlength">LastName should be {{lastName.errors.minlength.requiredLength}}</div>
+                            </div>
+                        </div>
+            
+                        <div class="form-group">
+                            <label class="pl-1 d-flex justify-content-start" for="email">Email</label>
+                            <input class="form-control" type="email" id="email" placeholder="Enter Your Email" ngModel name="emali" #email=ngModel pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                            <div class="alert alert-danger" *ngIf="email.touched&&!email.valid">Please enter your emial</div>
+                        </div>
+                        <div class="form-group">
+                            <label class="pl-1 d-flex justify-content-start" for="storeName">Store Name</label>
+                            <input class="form-control" type="text" id="storeName" placeholder="Enter Your Store Name" ngModel name="storeName" #storeName=ngModel required>
+                            <div class="alert alert-danger" *ngIf="storeName.touched&&!storeName.valid">Please enter your Store Name</div>
+                        </div>
+                        <div class="form-group">
+                            <label class="pl-1 d-flex justify-content-start" for="storeLocation">Store Location</label>
+                            <input class="form-control" type="text" id="storeLocation" placeholder="Enter Your Store Location" ngModel name="storeLocation" #storeLocation=ngModel required>
+                            <div class="alert alert-danger" *ngIf="storeLocation.touched&&!storeLocation.valid">Please enter your Store Location</div>
+                        </div>
+                        <div class="form-group">
+                            <label class="pl-1 d-flex justify-content-start" for="password">Password</label>
+                            <input class="form-control" type="password" placeholder="Enter Your Password" id="password" ngModel name="password" #password=ngModel required>
+                            <div class="alert alert-danger" *ngIf="password.touched&&!password.valid">Please enter your password</div>
+                
+                        </div>
+                        <div class="form-group">
+                            <label class="pl-1 d-flex justify-content-start" for="contactRole">Contact Role</label>
+                            <select class="form-control" id="contactRole" ngModel name="contactRole" #contactRole=ngModel required>
+                                <!--<option selected disabled>Choose role</option>-->
+                                <option *ngFor="let item of contactRoleArr">{{item}}</option>
+                            </select>
+                            <div class="alert alert-danger" *ngIf="contactRole.touched&&!contactRole.valid">Please choose your contact role</div>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary form-control btn-submit" [disabled]="f.invalid">Join Now</button>
+                        </div>
+                          
+                      </form>
+                      
+                    </div>
+               </div>
+            </div>
+          </div>
+    </div>
+    </div>
+    
+    
+</div>
